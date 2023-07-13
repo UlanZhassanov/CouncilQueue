@@ -113,8 +113,29 @@ body {
 	background: #7b7b7b;
 }
 
+.panel-info>.panel-heading {
+	background-color: #00008b !important;
+    border-color: #00008b !important;
+}
 
+.toggle .handle:after, .toggle .handle:before{
+	background-color: #00008b !important;
+}
 
+.btn-info, .btn-info.active, .btn-info.disabled, .btn-info:active, .btn-info[disabled] {
+	background-color: #00008b !important;
+    border-color: #00008b !important;
+}
 
+.navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:focus, .navbar-default .navbar-nav>.active>a:hover {
+	background-color: #0c3da5 !important;
+}
 
+.navbar-default .navbar-nav>li>a, .navbar-default .navbar-text {
+	color: #fff !important;
+}
 
+.navbar-default {
+    background-color: #495463 !important;
+    border-color: #495463 !important;
+}
