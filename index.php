@@ -11,12 +11,10 @@
     */
 session_start();
 include 'config/db_connector.php';
-if (!isset($_SESSION['user_id'])) {
-   header('Location: login.php');
-   exit;
-} else {
-   // Show users the page! 
-}
+// if (!isset($_SESSION['user_id'])) {
+//    header('Location: login.php');
+//    exit;
+// }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -68,7 +66,16 @@ if (!isset($_SESSION['user_id'])) {
                </ul>
                <ul class="nav navbar-nav navbar-right">
                   <li class="dropdown active">
-                     <a href="#" class="dropdown-toggle glyphicon glyphicon-user" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> Username<span class="caret"></span></a>
+                     <a href="#" class="dropdown-toggle glyphicon glyphicon-user" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                        <?php
+                        if (isset($_SESSION['user_id'])) {
+                           echo $_SESSION['username'];
+                        } else {
+                           echo 'Username';
+                        }
+                        ?>
+                        <span class="caret"></span>
+                     </a>
                      <ul class="dropdown-menu">
                         <li><a href="#">Profile</a></li>
                         <li><a href="#">Setting</a></li>
@@ -86,77 +93,9 @@ if (!isset($_SESSION['user_id'])) {
    </div>
    <div class="container">
       <div class="row">
-         <div class="col-sm-5">
-            <div class="panel panel-info">
-               <div class="panel-heading">
-                  <h2 class="panel-title"><strong>Add New Customer To The Queue</strong></h2>
-               </div>
-               <div class="panel-body">
-                  <!-- form here where the customer information will be entered -->
-                  <form name="myForm" action="lib/create.php" method="post">
-                     <label class="control control--radio">
-                        Housing
-                        <input type="radio" value="Housing" name="service" required />
-                        <div class="control__indicator"></div>
-                     </label>
-                     <label class="control control--radio">
-                        Benefits
-                        <input type="radio" value="Benefits" name="service" />
-                        <div class="control__indicator"></div>
-                     </label>
-                     <label class="control control--radio">
-                        Council Tax
-                        <input type="radio" value="Council Tax" name="service" />
-                        <div class="control__indicator"></div>
-                     </label>
-                     <label class="control control--radio">
-                        Fly-tipping
-                        <input type="radio" value="Fly-tipping" name="service" />
-                        <div class="control__indicator"></div>
-                     </label>
-                     <label class="control control--radio">
-                        Missed Bin
-                        <input type="radio" value="Missed Bin" name="service" />
-                        <div class="control__indicator"></div>
-                     </label>
-                     <hr>
-                     <label>Citizen</label>
-                     <label class="toggle">
-                        <input type="checkbox" name="type" value="Citizen">
-                        <span class="handle"></span>
-                     </label>
-                     <label>Organisation</label>
-                     <label class="toggle">
-                        <input type="checkbox" name="type" value="Organisation" alt="click">
-                        <span class="handle"></span>
-                     </label>
-                     <label>Anonymous</label>
-                     <label class="toggle toggle-success">
-                        <input type="checkbox" name="type" value="Anonymous">
-                        <span class="handle"></span>
-                     </label>
-                     <hr>
-                     <select name="title" class="btn btn-info" required>
-                        <option value="" disabled selected>Select Your Title</option>
-                        <option vlaue="Mr">Mr</option>
-                        <option vlaue="Mrs">Mrs</option>
-                        <option vlaue="Miss">Miss</option>
-                        <option vlaue="Others">Others</option>
-                     </select>
-                     <br />
-                     <label>Name</label>
-                     <input type='text' name='firstname' class='form-control input' placeholder='Customer First Name' required />
-                     <label>LastName</label>
-                     <input type='text' name='lastname' class='form-control' placeholder='Customer Last Name' required />
-                     <button type='submit' class='btn btn-info glyphicon glyphicon-floppy-save'> Save </button>
-                     <button type='reset' class='btn btn-danger glyphicon glyphicon-remove-sign'> Reset </button>
-                  </form><!-- /.form-->
-               </div>
-            </div>
-         </div><!--/Add new Record  -->
 
          <!-- Display list Of Customer in the queue  -->
-         <div class="col-md-7">
+         <div class="col-md-12">
             <div class="panel panel-info">
                <div class="panel-heading">
                   <strong>
@@ -182,8 +121,7 @@ if (!isset($_SESSION['user_id'])) {
    <!-- pages load faster -->
    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
    <script>
-      window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"> <
-            \/script>')
+      window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"> <\ / script > ')
    </script>
    <script src="js/bootstrap.min.js"></script>
    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->

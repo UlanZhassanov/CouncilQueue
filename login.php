@@ -23,6 +23,7 @@ if (isset($_POST['login'])) {
     } else {
         if ($password == $result['password']) {
             $_SESSION['user_id'] = $result['id'];
+            $_SESSION['username'] = $result['username'];
             echo '<p class="success">Congratulations, you are logged in!</p>';
             header('Location: index.php');
         } else {
