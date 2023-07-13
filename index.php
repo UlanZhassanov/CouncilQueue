@@ -74,7 +74,7 @@ if (!isset($_SESSION['user_id'])) {
                         <li><a href="#">Setting</a></li>
                         <li><a href="#">Edit Account</a></li>
                         <li role="separator" class="divider"></li>
-                        <li><a href="#">Logout</a></li>
+                        <li><a href="/CouncilQueue/logout.php">Logout</a></li>
                      </ul>
                   </li>
                </ul>
