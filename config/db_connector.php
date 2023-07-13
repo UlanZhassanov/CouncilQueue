@@ -3,7 +3,7 @@
 $host = "localhost"; //Host and Server 
 $db_name = "que"; // database name
 $username = "root"; // username for accessing school_management-db
-$password = "root";// password for accessing school_management-db
+$password = "";// password for accessing school_management-db
  
 /////////////////////////////////////////////////////////////////////////////////
 try {
