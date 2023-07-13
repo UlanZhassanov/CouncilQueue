@@ -37,7 +37,7 @@ if ($action == 'deleted') {
 
 
 /*%%%%%%%%%%%% Select all customer details are in the queue %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%*/
-$query = "SELECT * FROM queue_tb WHERE status NOT IN (2,3) ORDER BY id ASC";
+$query = "SELECT * FROM queue_tb WHERE status = 2 ORDER BY id ASC";
 $stmt  = $con->prepare($query);
 $stmt->execute();
 // this is how to get number of rows returned
@@ -54,10 +54,8 @@ if ($num > 0) {
   echo "<th>Id</th>";
   echo "<th>ФИО</th>";
   echo "<th>Образовательная программа</th>";
-  echo "<th>На базе</th>";
-  echo "<th>Время</th>";
-  echo "<th>Удалить</th>";
-  echo "<th>Принять</th>";
+  echo "<th>Отменить</th>";
+  echo "<th>Принято</th>";
   echo "</tr>";
   echo "</thead>"; //End Table Header 
 
@@ -77,10 +75,8 @@ if ($num > 0) {
     echo "<td>{$id}</td>"; // display customer Id
     echo "<td>{$firstname} {$lastname}</td>"; //display customer,firstname,lastname
     echo "<td>{$service}</td>"; //display type of service 
-    echo "<td>{$type}</td>"; // Display Type of Customer 
-    echo "<td>{$date->format('H:i')}</td>"; //display the time customer joined the queue
-    echo "<td><a href='#' onclick='delete_user({$id});' class='btn btn-danger'>X</a></td>"; // Delete Record Link
-    echo "<td><a href='#' onclick='take_user({$id});' class='btn btn-success'>✓</a></td>"; // Take to current admin
+    echo "<td><a href='#' onclick='cancel_user({$id});' class='btn btn-danger'>X</a></td>"; // Delete Record Link
+    echo "<td><a href='#' onclick='done_user({$id});' class='btn btn-success'>✓</a></td>"; // Take to current admin
     echo "</tr>";
     echo "</tbody>";
   } // End while()
@@ -124,17 +120,16 @@ else {
 
 <!--%%%%%%%%%%%d elete_user function used for deleting customer in the queue %%%%%%%%%%%%%%%%%%%%%%% -->
 <script type='text/javascript'>
-  function delete_user(id) {
-    var answer = confirm('Вы действительно хотите удалить из очереди?');
+  function cancel_user(id) {
+      window.location = "lib/cancelUser.php?id=" + id;
+  }
+  function done_user(id) {
+    var answer = confirm('Вы подтверждаете?');
     if (answer) {
       // if user clicked ok, 
       // pass the id to delete.php and execute the delete query & remove the customer in the queue
-      window.location = "lib/delete.php?id=" + id;
+      window.location = "lib/doneUser.php?id=" + id;
     }
-  }
-
-  function take_user(id) {
-      window.location = "lib/takeUser.php?id=" + id;
   }
 </script>
 <!-- %%%%%%%%%%%%%%%%%%%%%%% End delete_user%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% -->

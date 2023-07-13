@@ -25,7 +25,7 @@ if (isset($_POST['login'])) {
             $_SESSION['user_id'] = $result['id'];
             $_SESSION['username'] = $result['username'];
             echo '<p class="success">Congratulations, you are logged in!</p>';
-            header('Location: index.php');
+            header('Location: updateClients.php');
         } else {
             echo '<p class="error">Username password combination is wrong!</p>';
         }
@@ -65,9 +65,7 @@ if (isset($_POST['login'])) {
         }
 
         body {
-            margin: 50px auto;
             text-align: center;
-            width: 800px;
         }
 
         h1 {
@@ -125,6 +123,38 @@ if (isset($_POST['login'])) {
 </head>
 
 <body onload="startTime()">
+
+   <!--=============Navbars ================= -->
+   <div class="navbar">
+      <nav class="navbar navbar-default" role="navigation">
+         <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+               <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                  <span class="sr-only">Toggle navigation</span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+               </button>
+               <a class="navbar-brand" href="index.php">Queue CAA</a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+               <ul class="nav navbar-nav">
+                  <li class="active"><a href="index.php">HOME</a></li>
+                  <li><a href="#">ABOUT</a></li>
+                  <li><a href="#">CONTACT</a></li>
+               </ul>
+               <ul class="nav navbar-nav navbar-right">
+                  <li class="active"><a href="/CouncilQueue/updateClients.php">Admin Page</a></li>
+               </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+         </div>
+         <!-- /.container-fluid -->
+      </nav>
+   </div>
+
     <form method="post" action="" name="signin-form">
         <div class="form-element">
             <label>Username</label>

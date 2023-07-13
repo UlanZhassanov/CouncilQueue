@@ -55,7 +55,7 @@ include 'config/db_connector.php';
                   <span class="icon-bar"></span>
                   <span class="icon-bar"></span>
                </button>
-               <a class="navbar-brand" href="index.php">Queue App</a>
+               <a class="navbar-brand" href="index.php">Queue CAA</a>
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -65,25 +65,7 @@ include 'config/db_connector.php';
                   <li><a href="#">CONTACT</a></li>
                </ul>
                <ul class="nav navbar-nav navbar-right">
-                  <li class="dropdown active">
-                     <a href="#" class="dropdown-toggle glyphicon glyphicon-user" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-                        <?php
-                        if (isset($_SESSION['user_id'])) {
-                           echo $_SESSION['username'];
-                        } else {
-                           echo 'Username';
-                        }
-                        ?>
-                        <span class="caret"></span>
-                     </a>
-                     <ul class="dropdown-menu">
-                        <li><a href="#">Profile</a></li>
-                        <li><a href="#">Setting</a></li>
-                        <li><a href="#">Edit Account</a></li>
-                        <li role="separator" class="divider"></li>
-                        <li><a href="/CouncilQueue/logout.php">Logout</a></li>
-                     </ul>
-                  </li>
+                  <li class="active"><a href="/CouncilQueue/updateClients.php">Admin Page</a></li>
                </ul>
             </div>
             <!-- /.navbar-collapse -->
