@@ -8,6 +8,7 @@
    */
 
 
+   session_start();
    try {
         
    // include database connection ////////////////////////////////////////////////////////////////

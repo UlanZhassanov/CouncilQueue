@@ -24,6 +24,7 @@ if (isset($_POST['login'])) {
         if ($password == $result['password']) {
             $_SESSION['user_id'] = $result['id'];
             $_SESSION['username'] = $result['username'];
+            $_SESSION['window'] = $result['window'];
             echo '<p class="success">Congratulations, you are logged in!</p>';
             header('Location: updateClients.php');
         } else {

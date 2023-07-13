@@ -10,6 +10,7 @@
 
 /*%%%%%%%%%%%%%%%% Remove Customer in the Qeueu or Record Deleting %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%*/
 $action = isset($_GET['action']) ? $_GET['action'] : "";
+$window = isset($_SESSION['window']) ? $_SESSION['window'] : die('ERROR: Record Window not found.'); 
 if ($action == 'deleted') {
 
 ?>
@@ -37,7 +38,7 @@ if ($action == 'deleted') {
 
 
 /*%%%%%%%%%%%% Select all customer details are in the queue %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%*/
-$query = "SELECT * FROM queue_tb WHERE status = 2 ORDER BY id ASC";
+$query = "SELECT * FROM queue_tb WHERE status = 2 AND window = $window ORDER BY id ASC";
 $stmt  = $con->prepare($query);
 $stmt->execute();
 // this is how to get number of rows returned

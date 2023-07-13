@@ -8,6 +8,7 @@
    */
 
 
+   session_start();
    try {
         
    // include database connection ////////////////////////////////////////////////////////////////
@@ -17,14 +18,14 @@
 
        // get record ID ***************************************************************************
        // isset() is a PHP function used to verify if a value is there or not *********************
-       $id=isset($_GET['id']) ? $_GET['id'] : die('ERROR: Record ID not found.'); //***************
+       $id=isset($_GET['id']) ? $_GET['id'] : die('ERROR: Record ID not found.'); 
    //**********************************************************************************************
 
     
        // delete query @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-       $query = "UPDATE queue_tb SET status = 0 WHERE id = ?";//@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+       $query = "UPDATE queue_tb SET status = 0, window = 0 WHERE id = :id";//@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
        $stmt = $con->prepare($query);//@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-       $stmt->bindParam(1, $id);//@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+       $stmt->bindParam("id", $id, PDO::PARAM_STR);
        if($stmt->execute()){    //@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
            // redirect to index.php records page and @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
            // tell the user record was deleted  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
