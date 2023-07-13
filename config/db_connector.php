@@ -1,9 +1,9 @@
 <?php
 // used to connect to the database
 $host = "localhost"; //Host and Server 
-$db_name = "queue_sys_"; // database name
+$db_name = "que"; // database name
 $username = "root"; // username for accessing school_management-db
-$password = "";// password for accessing school_management-db
+$password = "root";// password for accessing school_management-db
  
 /////////////////////////////////////////////////////////////////////////////////
 try {

@@ -73,7 +73,7 @@ if ($num > 0) {
     echo "<tr>";
     echo "<td>{$id}</td>";// display customer Id
     echo "<td>{$type}</td>"; // Display Type of Customer 
-    echo "<td>{$title} {$firstname} {$lastname}</td>"; //display customer title,firstname,lastname
+    echo "<td>{$firstname} {$lastname}</td>"; //display customer,firstname,lastname
     echo "<td>{$service}</td>";//display type of service 
     echo "<td>{$date->format('h:i A')}</td>";//display the time customer joined the queue
     echo "<td><a href='#' onclick='delete_user({$id});'  
