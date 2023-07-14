@@ -61,8 +61,7 @@ if (!isset($_SESSION['user_id'])) {
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                     <ul class="nav navbar-nav">
                         <li class="active"><a href="index.php">HOME</a></li>
-                        <li><a href="/CouncilQueue/add.php">ADD</a></li>
-                        <li><a href="#">CONTACT</a></li>
+                        <li><a href="add.php">ADD</a></li>
                     </ul>
                     <ul class="nav navbar-nav navbar-right">
                         <li class="dropdown active">
@@ -77,11 +76,11 @@ if (!isset($_SESSION['user_id'])) {
                                 <span class="caret"></span>
                             </a>
                             <ul class="dropdown-menu">
-                                <li><a href="/CouncilQueue/updateClients.php">Profile</a></li>
+                                <li><a href="admin.php">Profile</a></li>
                                 <li><a href="#">Setting</a></li>
                                 <li><a href="#">Edit Account</a></li>
                                 <li role="separator" class="divider"></li>
-                                <li><a href="/CouncilQueue/logout.php">Logout</a></li>
+                                <li><a href="logout.php">Logout</a></li>
                             </ul>
                         </li>
                     </ul>

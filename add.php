@@ -56,19 +56,10 @@ include 'config/db_connector.php';
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                <ul class="nav navbar-nav">
                   <li class="active"><a href="index.php">HOME</a></li>
-                  <li><a href="/CouncilQueue/add.php">ADD</a></li>
+                  <li><a href="add.php">ADD</a></li>
                </ul>
                <ul class="nav navbar-nav navbar-right">
-                  <li class="dropdown active">
-                     <a href="#" class="dropdown-toggle glyphicon glyphicon-user" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> Username<span class="caret"></span></a>
-                     <ul class="dropdown-menu">
-                        <li><a href="#">Profile</a></li>
-                        <li><a href="#">Setting</a></li>
-                        <li><a href="#">Edit Account</a></li>
-                        <li role="separator" class="divider"></li>
-                        <li><a href="#">Logout</a></li>
-                     </ul>
-                  </li>
+                  <li class="active"><a href="admin.php">Admin Page</a></li>
                </ul>
             </div>
             <!-- /.navbar-collapse -->

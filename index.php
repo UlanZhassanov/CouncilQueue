@@ -61,11 +61,10 @@ include 'config/db_connector.php';
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                <ul class="nav navbar-nav">
                   <li class="active"><a href="index.php">HOME</a></li>
-                  <li><a href="/CouncilQueue/add.php">ADD</a></li>
-                  <li><a href="#">CONTACT</a></li>
+                  <li><a href="add.php">ADD</a></li>
                </ul>
                <ul class="nav navbar-nav navbar-right">
-                  <li class="active"><a href="/CouncilQueue/updateClients.php">Admin Page</a></li>
+                  <li class="active"><a href="admin.php">Admin Page</a></li>
                </ul>
             </div>
             <!-- /.navbar-collapse -->
@@ -80,16 +79,18 @@ include 'config/db_connector.php';
          <div class="col-md-12">
             <div class="panel panel-info">
                <div class="panel-heading">
-                  <strong>
-                     <center>List of Customers Been Queued Today
-                        <span id="txt"> </span> <?php echo date("d/m/Y"); ?>
-                     </center>
-                  </strong>
+                  <h4>
+                     <strong>
+                        <center>Очередь
+                           <span id="txt"> </span> <?php echo date("d/m/Y"); ?>
+                        </center>
+                     </strong>
+                  </h4>
                </div>
                <div class="panel-body">
                   <?php
                   //Display All customers in the queue 
-                  include('lib/queued-today.php');
+                  include('lib/queued-today-index.php');
 
                   ?>
                </div><!--/.panel-body -->

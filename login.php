@@ -26,7 +26,7 @@ if (isset($_POST['login'])) {
             $_SESSION['username'] = $result['username'];
             $_SESSION['window'] = $result['window'];
             echo '<p class="success">Congratulations, you are logged in!</p>';
-            header('Location: updateClients.php');
+            header('Location: admin.php');
         } else {
             echo '<p class="error">Username password combination is wrong!</p>';
         }
@@ -143,11 +143,10 @@ if (isset($_POST['login'])) {
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                <ul class="nav navbar-nav">
                   <li class="active"><a href="index.php">HOME</a></li>
-                  <li><a href="/CouncilQueue/add.php">ADD</a></li>
-                  <li><a href="#">CONTACT</a></li>
+                  <li><a href="add.php">ADD</a></li>
                </ul>
                <ul class="nav navbar-nav navbar-right">
-                  <li class="active"><a href="/CouncilQueue/updateClients.php">Admin Page</a></li>
+                  <li class="active"><a href="admin.php">Admin Page</a></li>
                </ul>
             </div>
             <!-- /.navbar-collapse -->
