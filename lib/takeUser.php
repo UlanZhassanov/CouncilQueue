@@ -1,11 +1,4 @@
 <?php
-  /*
-    * lib/delete.php 
-    * used for Removing customer in The Queue 
-    * Author Ruben Faraj 
-    * Email: Reben_f@hotmail.co.uk 
-    * Date : 14-05-2017 
-   */
 
    session_start();
 

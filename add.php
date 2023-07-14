@@ -1,14 +1,4 @@
 <?php
-/*
-    *index.php 
-    * Uses lib/create.php server side script to store customer Details 
-    * Uses lib/ReadMe.php to Display current customers in the queue
-    * Uses lib/delete.php to remove customer in the queue 
-    * Author Ruben Faraj 
-    * Email: Reben_f@hotmail.co.uk 
-    * Date : 14-05-2017 
-    
-    */
 include 'config/db_connector.php';
 ?>
 <!DOCTYPE html>

@@ -1,13 +1,6 @@
 <?php
 
 include ('db_connector.php');
-/*
- * lib/queued-today.php 
- * used for display Customer in the Queue , Called From index.php 
- * Author Ruben Faraj 
- * Email: Reben_f@hotmail.co.uk 
- * Date : 14-05-2017  
- */
 
 /*%%%%%%%%%%%%%%%% Remove Customer in the Qeueu or Record Deleting %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%*/
 $action = isset($_GET['action']) ? $_GET['action'] : "";
@@ -96,7 +89,6 @@ else {
       <h4> No Customer Waiting In The Queue!!!</h4>
       <ul>
         <li>Please Use The Form Provided To Add Customer To The Queue!</li>
-        <li>Need Help ? Contact Techincal Team at Reben_f@hotmail.co.uk </li>
       </ul>
     </div><!--  alert-warning -->
   </div><!--/.col-md-8   -->

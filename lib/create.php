@@ -1,12 +1,4 @@
 <?php
-/*
-    * lib/create.php 
-    * Used For Entering Customer Records to join the Queue
-    * Author Ruben Faraj 
-    * lastname: Reben_f@hotmail.co.uk 
-    * Date : 02-05-2017 
-   
-   */
 if ($_POST) {
 
     // include database connection
