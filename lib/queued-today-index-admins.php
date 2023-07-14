@@ -37,7 +37,7 @@ if ($action == 'deleted') {
 
 
 /*%%%%%%%%%%%% Select all customer details are in the queue %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%*/
-$query = "SELECT * FROM queue_tb WHERE status NOT IN (2,3) ORDER BY id ASC";
+$query = "SELECT * FROM queue_tb WHERE status = 2 ORDER BY id ASC";
 $stmt  = $con->prepare($query);
 $stmt->execute();
 // this is how to get number of rows returned
@@ -50,12 +50,9 @@ if ($num > 0) {
   //creating a table to show customer in the queue 
   echo "<table id='example' class='table table-striped ' cellspacing='0' width='100%''>";
   echo "<thead>";
-  echo "<tr style='background: gold;'>";
-  echo "<th>Id</th>";
+  echo "<tr style='background: #42ff41;'>";
   echo "<th>ФИО</th>";
-  echo "<th>Образовательная программа</th>";
-  echo "<th>На базе</th>";
-  echo "<th>Время</th>";
+  echo "<th>Окно</th>";
   echo "</tr>";
   echo "</thead>"; //End Table Header 
 
@@ -72,11 +69,8 @@ if ($num > 0) {
     // creating new table body , row per a record
     echo "<tbody>";
     echo "<tr>";
-    echo "<td><b>{$id}</b></td>"; // display customer Id
     echo "<td><b>{$firstname} {$lastname}</b></td>"; //display customer,firstname,lastname
-    echo "<td><b>{$service}</b></td>"; //display type of service 
-    echo "<td><b>{$type}</b></td>"; // Display Type of Customer 
-    echo "<td><b>{$date->format('H:i')}</b></td>"; //display the time customer joined the queue
+    echo "<td><b>{$window}</b></td>"; //display the time customer joined the queue
     echo "</tr>";
     echo "</tbody>";
   } // End while()

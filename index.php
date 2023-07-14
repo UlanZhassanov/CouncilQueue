@@ -76,7 +76,7 @@ include 'config/db_connector.php';
       <div class="row">
 
          <!-- Display list Of Customer in the queue  -->
-         <div class="col-md-12">
+         <div class="col-md-8">
             <div class="panel panel-info">
                <div class="panel-heading">
                   <h4>
@@ -96,8 +96,29 @@ include 'config/db_connector.php';
                </div><!--/.panel-body -->
             </div> <!--/.panel panel-info   -->
          </div><!-- /.col-md-7 -->
-      </div> <!--/.row   -->
+         <!-- Display list Of Customer in the queue  -->
+         <div class="col-md-4">
+            <div class="panel panel-info">
+               <div class="panel-heading">
+                  <h4>
+                     <strong>
+                        <center>
+                           <span id="txt"> </span> <?php echo date("d/m/Y"); ?>
+                        </center>
+                     </strong>
+                  </h4>
+               </div>
+               <div class="panel-body">
+                  <?php
+                  //Display All customers in the queue 
+                  include('lib/queued-today-index-admins.php');
 
+                  ?>
+               </div><!--/.panel-body -->
+            </div> <!--/.panel panel-info   -->
+         </div><!-- /.col-md-7 -->
+
+      </div> <!--/.row   -->
    </div><!-- /container -->
 
    <!-- Bootstrap core JavaScripts ============= -->

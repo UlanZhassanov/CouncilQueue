@@ -38,8 +38,9 @@ if ($action == 'deleted') {
 
 
 /*%%%%%%%%%%%% Select all customer details are in the queue %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%*/
-$query = "SELECT * FROM queue_tb WHERE status = 2 AND window = $window ORDER BY id ASC";
+$query = "SELECT * FROM queue_tb WHERE status = 2 AND window = :window ORDER BY id ASC";
 $stmt  = $con->prepare($query);
+$stmt->bindParam("window", $window, PDO::PARAM_STR);
 $stmt->execute();
 // this is how to get number of rows returned
 $num = $stmt->rowCount();
@@ -51,7 +52,7 @@ if ($num > 0) {
   //creating a table to show customer in the queue 
   echo "<table id='example' class='table table-striped ' cellspacing='0' width='100%''>";
   echo "<thead>";
-  echo "<tr>";
+  echo "<tr style='background: #42ff41;'>";
   echo "<th>Id</th>";
   echo "<th>ФИО</th>";
   echo "<th>Образовательная программа</th>";
@@ -73,9 +74,9 @@ if ($num > 0) {
     // creating new table body , row per a record
     echo "<tbody>";
     echo "<tr>";
-    echo "<td>{$id}</td>"; // display customer Id
-    echo "<td>{$firstname} {$lastname}</td>"; //display customer,firstname,lastname
-    echo "<td>{$service}</td>"; //display type of service 
+    echo "<td><b>{$id}</b></td>"; // display customer Id
+    echo "<td><b>{$firstname} {$lastname}</b></td>"; //display customer,firstname,lastname
+    echo "<td><b>{$service}</b></td>"; //display type of service 
     echo "<td><a href='#' onclick='cancel_user({$id});' class='btn btn-danger'>X</a></td>"; // Delete Record Link
     echo "<td><a href='#' onclick='done_user({$id});' class='btn btn-success'>✓</a></td>"; // Take to current admin
     echo "</tr>";

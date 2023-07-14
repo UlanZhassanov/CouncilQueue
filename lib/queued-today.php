@@ -50,7 +50,7 @@ if ($num > 0) {
   //creating a table to show customer in the queue 
   echo "<table id='example' class='table table-striped ' cellspacing='0' width='100%''>";
   echo "<thead>";
-  echo "<tr>";
+  echo "<tr style='background: gold;'>";
   echo "<th>Id</th>";
   echo "<th>ФИО</th>";
   echo "<th>Образовательная программа</th>";
@@ -74,11 +74,11 @@ if ($num > 0) {
     // creating new table body , row per a record
     echo "<tbody>";
     echo "<tr>";
-    echo "<td>{$id}</td>"; // display customer Id
-    echo "<td>{$firstname} {$lastname}</td>"; //display customer,firstname,lastname
-    echo "<td>{$service}</td>"; //display type of service 
-    echo "<td>{$type}</td>"; // Display Type of Customer 
-    echo "<td>{$date->format('H:i')}</td>"; //display the time customer joined the queue
+    echo "<td><b>{$id}</b></td>"; // display customer Id
+    echo "<td><b>{$firstname} {$lastname}</b></td>"; //display customer,firstname,lastname
+    echo "<td><b>{$service}</b></td>"; //display type of service 
+    echo "<td><b>{$type}</b></td>"; // Display Type of Customer 
+    echo "<td><b>{$date->format('H:i')}</b></td>"; //display the time customer joined the queue
     echo "<td><a href='#' onclick='delete_user({$id});' class='btn btn-danger'>X</a></td>"; // Delete Record Link
     echo "<td><a href='#' onclick='take_user({$id});' class='btn btn-success'>✓</a></td>"; // Take to current admin
     echo "</tr>";
