@@ -102,10 +102,7 @@ if (!isset($_SESSION['user_id'])) {
                             </center>
                         </strong>
                     </div>
-                    <div class="panel-body">
-                        <?php
-                        require('lib/queued-today.php');
-                        ?>
+                    <div class="panel-body" id="mainqueue">
                     </div>
                 </div>
             </div><!--/Add new Record  -->
@@ -121,7 +118,7 @@ if (!isset($_SESSION['user_id'])) {
                             </center>
                         </strong>
                     </div>
-                    <div class="panel-body">
+                    <div class="panel-body" id="adminqueue">
                         <?php
                         require('lib/queued-today-admin.php');
                         ?>
@@ -143,6 +140,15 @@ if (!isset($_SESSION['user_id'])) {
     <script src="js/bootstrap.min.js"></script>
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <script src="js/ie10-viewport-bug-workaround.js"></script>
+   <script type="text/javascript" src="jquery.js"></script>
+   <script type="text/javascript">
+      refreshTables();
+      setInterval(refreshTables, 3000);
+      var inRequest = false;
+      function refreshTables() {
+         $('#mainqueue').load('lib/queued-today.php');     
+      }
+   </script>
     <script>
         function startTime() {
             var today = new Date();

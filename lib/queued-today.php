@@ -1,5 +1,6 @@
 <?php
 
+include ('db_connector.php');
 /*
  * lib/queued-today.php 
  * used for display Customer in the Queue , Called From index.php 

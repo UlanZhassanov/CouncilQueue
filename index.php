@@ -87,12 +87,7 @@ include 'config/db_connector.php';
                      </strong>
                   </h4>
                </div>
-               <div class="panel-body">
-                  <?php
-                  //Display All customers in the queue 
-                  include('lib/queued-today-index.php');
-
-                  ?>
+               <div class="panel-body" id="mainqueue">
                </div><!--/.panel-body -->
             </div> <!--/.panel panel-info   -->
          </div><!-- /.col-md-7 -->
@@ -108,12 +103,7 @@ include 'config/db_connector.php';
                      </strong>
                   </h4>
                </div>
-               <div class="panel-body">
-                  <?php
-                  //Display All customers in the queue 
-                  include('lib/queued-today-index-admins.php');
-
-                  ?>
+               <div class="panel-body" id="adminqueue">
                </div><!--/.panel-body -->
             </div> <!--/.panel panel-info   -->
          </div><!-- /.col-md-7 -->
@@ -130,6 +120,16 @@ include 'config/db_connector.php';
    <script src="js/bootstrap.min.js"></script>
    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
    <script src="js/ie10-viewport-bug-workaround.js"></script>
+   <script type="text/javascript" src="jquery.js"></script>
+   <script type="text/javascript">
+      refreshTables();
+      setInterval(refreshTables, 3000);
+      var inRequest = false;
+      function refreshTables() {
+         $('#mainqueue').load('lib/queued-today-index.php');
+         $('#adminqueue').load('lib/queued-today-index-admins.php');         
+      }
+   </script>
    <script>
       function startTime() {
          var today = new Date();
