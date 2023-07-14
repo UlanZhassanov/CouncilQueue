@@ -143,7 +143,7 @@ if (isset($_POST['login'])) {
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                <ul class="nav navbar-nav">
                   <li class="active"><a href="index.php">HOME</a></li>
-                  <li><a href="#">ABOUT</a></li>
+                  <li><a href="/CouncilQueue/add.php">ADD</a></li>
                   <li><a href="#">CONTACT</a></li>
                </ul>
                <ul class="nav navbar-nav navbar-right">

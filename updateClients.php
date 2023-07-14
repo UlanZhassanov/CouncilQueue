@@ -61,7 +61,7 @@ if (!isset($_SESSION['user_id'])) {
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                     <ul class="nav navbar-nav">
                         <li class="active"><a href="index.php">HOME</a></li>
-                        <li><a href="#">ABOUT</a></li>
+                        <li><a href="/CouncilQueue/add.php">ADD</a></li>
                         <li><a href="#">CONTACT</a></li>
                     </ul>
                     <ul class="nav navbar-nav navbar-right">
@@ -98,7 +98,7 @@ if (!isset($_SESSION['user_id'])) {
                 <div class="panel panel-info">
                     <div class="panel-heading">
                         <strong>
-                            <center>Очередь 
+                            <center>Очередь
                                 <span id="txt"> </span> <?php echo date("d/m/Y"); ?>
                             </center>
                         </strong>
@@ -111,13 +111,13 @@ if (!isset($_SESSION['user_id'])) {
                 </div>
             </div><!--/Add new Record  -->
 
-            
+
             <!-- Display list Of Customer in the queue  -->
             <div class="col-md-4">
                 <div class="panel panel-info">
                     <div class="panel-heading">
                         <strong>
-                            <center>Редактирование 
+                            <center>Мой список
                                 <span id="txt"> </span> <?php echo date("d/m/Y"); ?>
                             </center>
                         </strong>
